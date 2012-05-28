@@ -1,4 +1,8 @@
 function bfrepl(bf_program)
+%BFREPL a Brainfuck REPL
+%Usage: bfrepl([bf_program])
+%param: bf_program - Brainfuck script to start interpretation with
+%The repl only interprets Brainfuck tokens and 'q' (used to quite the repl)
 if nargin < 1
     bf_program = '';
 end
