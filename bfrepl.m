@@ -15,8 +15,8 @@ program = char(zeros(1, 2 ^ 16));
 program(1:numel(bf_program)) = bf_program(:);
 program_size = numel(program);
 program_pointer = 0;
-input_prompt = '\n.. ';
-nested_prompt = '\n[[ ';
+input_prompt = '.. ';
+nested_prompt = '[[ ';
 
 while program_pointer < program_size
     program_pointer = program_pointer + 1;
@@ -41,10 +41,10 @@ while program_pointer < program_size
         case '-'
             tape(tape_pointer) = tape(tape_pointer) - 1;
         case '.'
-            fprintf(tape(tape_pointer));
+            fprintf([tape(tape_pointer), '\n']);
         case ','
             while isempty(user_input)
-                user_input = input('\n,, ', 's');
+                user_input = input(',, ', 's');
                 tape(tape_pointer) = user_input(1);
             end
             user_input = '';
