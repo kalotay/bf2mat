@@ -1,4 +1,7 @@
 function bfrepl(bf_program)
+if nargin < 1
+    bf_program = '';
+end
 tape = char(zeros(1, 2 ^ 16));
 tape_pointer = 1;
 open_stack = zeros(2 ^ 14, 1);
